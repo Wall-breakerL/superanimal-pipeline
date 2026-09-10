@@ -8,13 +8,15 @@ SuperAnimal 推理 → 置信度过滤 → 缺失补齐 → 时序平滑 → 10/
 
 > **方法声明**：历史兼容清洗使用 **5 帧居中滑动均值，不是中值滤波**。长缺失段和 likelihood 也会插值。技术验收不等于姿态精度已经得到人工真值验证。
 
-当前验收：两平台各 19 项测试、34,938 帧历史结果精确回归、真实 200 帧清洗与视频导出通过。当前服务器无 GPU、内存限额 2 GiB，新推理未跑通；换机后仍需短视频完整 smoke。详见 [验收记录](docs/verification.md)。
+当前验收：两平台各 19 项测试、34,938 帧历史结果精确回归通过；RTX 4090 上 200 帧真实视频的**新推理 → 清洗 → 10 点导出 → 视频 → 续跑验证**通过，约 17.5 秒。仅为短视频技术验收，不是全数据精度或训练效果证明。详见 [验收总览](docs/verification.md)和 [GPU 实测](docs/gpu-validation-20260910.md)。
 
 ## 快速开始
 
 推荐 Linux、Python 3.11、NVIDIA GPU。CPU 支持清洗、导出、测试；推理性能与设备支持以 `doctor` 和实际 smoke 为准。
 
 ```bash
+git clone https://github.com/Wall-breakerL/superanimal-pipeline.git
+cd superanimal-pipeline
 python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
@@ -130,6 +132,6 @@ python -m unittest discover -s tests -v
 
 模型通过 DeepLabCut 调用，不复制上游模型实现，不把权重或实验视频放进 Git。官方参考：[SuperAnimal 文档](https://deeplabcut.github.io/DeepLabCut/examples/COLAB/COLAB_YOURDATA_SuperAnimal.html)、[安装说明](https://deeplabcut.github.io/DeepLabCut/docs/installation.html)。依赖以此项目的实际验证版本为准，不自动追随文档最新版。
 
-本项目目前为本地交付，**尚未选择项目自身的开源许可证，也未公开发布**。发布前需要仓库所有者确认历史脚本的授权、许可证以及实验材料可公开范围。详见 [来源记录](docs/provenance.md)。
+代码托管于 [Wall-breakerL/superanimal-pipeline](https://github.com/Wall-breakerL/superanimal-pipeline)，当前为**私有仓库**，克隆需有访问权限。尚未选择项目自身的开源许可证；转为公开前需要仓库所有者确认历史脚本的授权、许可证以及实验材料可公开范围。详见 [来源记录](docs/provenance.md)。
 
 阶段范围与迁移前检查见 [交接说明](docs/handoff.md)。
