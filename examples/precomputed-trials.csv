@@ -1,0 +1,2 @@
+trial_id,video,animal_id,group,raw_json,raw_h5
+05,../data/mouse05.mp4,mouse05,group_a,../data/raw05.json,../data/raw05.h5

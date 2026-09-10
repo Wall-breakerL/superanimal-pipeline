@@ -1,0 +1,11 @@
+schema_version: 1
+manifest: precomputed-trials.csv
+output: ../outputs/precomputed
+model:
+  mode: precomputed
+cuts:
+  mode: manual
+  file: cuts.json
+export:
+  keypoints: 10
+  labeled_video: true

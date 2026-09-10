@@ -1,0 +1,2 @@
+trial_id,video,animal_id,group,pair_id,crop_x,crop_y,crop_width,crop_height
+05,../data/mouse05.mp4,mouse05,group_a,,,,,

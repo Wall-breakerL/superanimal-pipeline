@@ -1,0 +1,3 @@
+trial_id,video,animal_id,group,pair_id,crop_x,crop_y,crop_width,crop_height
+05,../data/paired.avi,mouse05,group_a,camera01,0,0,640,480
+35,../data/paired.avi,mouse35,group_b,camera01,640,0,640,480

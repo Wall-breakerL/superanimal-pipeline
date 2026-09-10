@@ -1,0 +1,22 @@
+schema_version: 1
+manifest: trials.csv
+output: ../outputs/example
+model:
+  mode: checkpoint
+  pose_checkpoint: ../weights/snapshot-hrnet_w32-004.pt
+  detector_checkpoint: ../weights/snapshot-fasterrcnn_resnet50_fpn_v2-004.pt
+  batch_size: 2
+  detector_batch_size: 2
+  bbox_threshold: 0.9
+  pcutoff: 0.1
+cleaning:
+  keypoint_threshold: 0.1
+  bbox_threshold: 0.5
+  smoothing_window: 5
+  long_gap_threshold: 24  # 仅用于报告，不是插值长度上限
+cuts:
+  mode: 'off'
+export:
+  keypoints: 10
+  labeled_video: true
+  display_threshold: 0.2
