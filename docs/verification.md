@@ -50,4 +50,4 @@
 - `.local/demo-final/data/demo05/03_labeled_cleaned.mp4`：10 点演示视频。
 - 服务器 `.local/unit-tests-final.log`、`.local/inference*.log`：Linux 测试与未完成推理记录。
 
-原始实验文件与师兄 AutoCBE tracked 源码未修改。代码托管到 GitHub 私有仓库，未公开数据或选择开源许可证。后续边界见 `handoff.md`。
+原始实验文件与师兄 AutoCBE tracked 源码未修改。2026-09-10 验收时代码托管到 GitHub 私有仓库，未公开数据或选择开源许可证。2026-09-11 维护者要求将代码公开，当前托管与授权边界见 `handoff.md`；本页保留原验收范围。
